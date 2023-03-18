@@ -5,14 +5,12 @@ import com.hexagonal.application.ports.in.FindCustomerByIdInputPort;
 import com.hexagonal.application.ports.out.FindCustomerByIdOutputPort;
 import lombok.RequiredArgsConstructor;
 
-import java.util.UUID;
-
 @RequiredArgsConstructor
 public class FindCustomerByIdUseCase implements FindCustomerByIdInputPort {
     private final FindCustomerByIdOutputPort findCustomerByIdOutputPort;
 
     @Override
-    public Customer find(UUID id) {
+    public Customer find(String id) {
         return findCustomerByIdOutputPort.find(id)
                 .orElseThrow(() -> new RuntimeException("Customer not found"));
     }

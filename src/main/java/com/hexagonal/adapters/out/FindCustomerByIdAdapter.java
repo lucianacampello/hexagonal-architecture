@@ -8,7 +8,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.util.Optional;
-import java.util.UUID;
 
 @Component
 @RequiredArgsConstructor
@@ -17,7 +16,7 @@ public class FindCustomerByIdAdapter implements FindCustomerByIdOutputPort {
     private final CustomerEntityMapper mapper;
 
     @Override
-    public Optional<Customer> find(UUID id) {
+    public Optional<Customer> find(String id) {
         return  repository.findById(id)
                 .map(mapper::toCustomer);
     }
