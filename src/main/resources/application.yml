@@ -11,7 +11,7 @@ spring:
       password: example
       database: hexagonal
 
-arantes:
+hexagonal:
   client:
     address:
       url: http://localhost:8082/addresses
